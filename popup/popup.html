@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps Mass Reviewer</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-orb orb-1"></div>
+    <div class="glass-orb orb-2"></div>
+    <div class="glass-orb orb-3"></div>
+    
+    <div class="app-container glass-panel">
+        <header class="glass-header">
+            <div class="logo">⭐</div>
+            <div>
+                <h1>Maps Bulk Review</h1>
+                <p>Automate reviews for Maps locations</p>
+            </div>
+        </header>
+
+        <section class="card" id="step-extract">
+            <div class="step-title">
+                <span class="step-badge">1</span>
+                <h2>Extract Listings</h2>
+            </div>
+            <p class="subtitle">Search your desired locations on Maps, then click extraction below.</p>
+            <button class="btn btn-primary" id="btn-extract">Extract Open Maps Tab</button>
+            <div id="extract-status" class="status-message"></div>
+        </section>
+
+        <section class="card hidden-step" id="step-list">
+            <div class="step-title">
+                <span class="step-badge">2</span>
+                <h2>Selected Targets (<span id="target-count">0</span>)</h2>
+            </div>
+            <div class="list-container" id="target-list">
+                <!-- Dynamically populated list goes here -->
+            </div>
+            <div class="list-actions">
+                <button class="btn-text" id="btn-select-all">Select All</button>
+                <button class="btn-text" id="btn-deselect-all">Deselect All</button>
+            </div>
+        </section>
+
+        <section class="card hidden-step" id="step-review">
+            <div class="step-title">
+                <span class="step-badge">3</span>
+                <h2>Configure Review</h2>
+            </div>
+            
+            <div class="rating-container">
+                <label>Star Rating</label>
+                <div class="stars" id="star-rating">
+                    <span data-value="1">★</span>
+                    <span data-value="2">★</span>
+                    <span data-value="3">★</span>
+                    <span data-value="4">★</span>
+                    <span data-value="5">★</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Review Description</label>
+                <textarea id="review-text" rows="4" placeholder="Share details of your experience..."></textarea>
+            </div>
+        </section>
+
+        <section class="card hidden-step actions" id="step-actions">
+            <button class="btn btn-glow" id="btn-start">🚀 Start Bulk Review Engine</button>
+            
+            <div id="progress-container" class="hidden">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">0 / 0 completed</div>
+                <button class="btn btn-danger" id="btn-stop">Stop Process</button>
+            </div>
+        </section>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

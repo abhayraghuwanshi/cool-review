@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Maps Mass Reviewer",
+  "version": "1.0.1",
+  "description": "Extract search results from Google Maps and post reviews in bulk based on mapping.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs",
+    "notifications"
+  ],
+  "host_permissions": [
+    "*://*.google.com/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Open Mass Reviewer"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/*"
+      ],
+      "all_frames": true,
+      "js": ["content.js"]
+    }
+  ]
+}
