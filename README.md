@@ -2,8 +2,6 @@
 
 A powerful Chrome Extension to automate the process of extracting Google Maps locations and posting bulk reviews. This tool is designed to save you hours of manual clicking and waiting by managing tabs, simulating human interaction, and processing a queue of locations in the background.
 
-![Maps Mass Reviewer Thumbnail](<youtube-thumbnail-link>) <!-- Replace with your actual thumbnail or image link -->
-
 ## 🚀 Features
 
 *   **Smart Link Extraction:** Quickly pull all valid Google Maps place links directly from a search page.
