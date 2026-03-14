@@ -78,7 +78,7 @@ function processNextInQueue() {
             console.log("[MassReviewer] Processing next target:", nextTarget.name);
 
             // Create a new tab and start automation there
-            chrome.tabs.create({ url: nextTarget.url, active: false }, (tab) => {
+            chrome.tabs.create({ url: nextTarget.url, active: true }, (tab) => {
                 currentTabId = tab.id;
 
                 // Content script will automatically trigger due to the URL and state
